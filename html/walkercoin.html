@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head id="head">
+<title>
+  WALKERCOIN Wallet by Maurice W2
+</title>
+
+<!-- <link rel="stylesheet" type="text/css" href="css/chess.css" />
+<link rel="stylesheet" type="text/css" href="css/board.css" /> -->
+
+<!-- Favicon 
+<link rel="shortcut icon" href="images/favicon.ico" /> -->
+
+<!-- Icon -->
+<link rel="icon" href="images/walkercoin-logo.jpg" />
+
+<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+
+<script src="js/jquery.js"></script>
+
+<!-- <script src="js/prototype-1.6.0.2.js" type="text/javascript"></script>
+<script src="js/scriptaculous.js" type="text/javascript"></script>
+<script src="js/chessUtil.js"></script>
+<script src="js/chess.js"></script>
+<script src="js/chess-ai.js"></script> -->
+
+<script>
+    var xhr1 = new XMLHttpRequest();
+    xhr1.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        
+      }
+    };     
+    xhr1.open("GET", "/walkerCoinTrust", true);
+    xhr1.send(); 
+
+    setTimeout(function(){
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById('balance').innerHTML = this.responseText;
+        }
+      };     
+      //xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.open("GET", "/checkBalance", true);
+      xhr.send();
+     }, 1000);
+</script>
+
+</head>
+
+<body>
+  <nav style="float:left;">
+    
+    <ul style="list-style-type:none;">
+      <li>
+        <h2>Balance: <span id="balance"></span> WALK</h2>
+        <!-- <button onclick="" style="background:#8103ff;" class="btn btn-primary btn-block">Receive FREE 10 WALK</button> -->
+      </li><BR>
+      <li>
+        <a href="/deposit">Deposit WALK</a>
+      </li><BR>
+      <li>
+        <a href="/withdraw">Withdraw WALK</a>
+      </li><BR>
+      <!-- <li>
+        <a href="">Withdraw WALK via QR Code</a>
+      </li><BR> -->
+      <li>
+        <a href="/logout">Logout</a>
+      </li><BR><BR>
+      <img style="width:80%;margin-left:10%;height:200px;" src="images/stellar-power.png" />
+    </ul>
+
+  </nav>
+
+  <div style="text-align:center;">
+      <h2 style="text-align:center;">WELCOME TO WALKERCOIN WALLET</h2>
+      <img style="width:60%;height:500px;" src="images/walkercoin-logo.jpg" />
+  </div>
+
+<!-- <div id="holder">
+</div>
+<div id="disclaimer">
+  <p>
+    This page does not currently work on certain versions of Chromium
+    and Google Chrome due to this issue:
+    <a href="http://code.google.com/p/chromium/issues/detail?id=62123">Issue
+      62123</a> Only certain builds of version 9 seem to be affected;
+      version 9.0.582.0 (0) of Chromium exhibits the bug, while
+      version 9.0.597.83 of Google Chrome doesn't. There do not seem
+      to be any problems on version 8, which is the stable release.
+  </p>
+  <p>
+    Unfortunately, the AI does not work particularly well on browsers
+    with slower Javascript engines, including older versions of
+    Firefox. While it should still <emph>work</emph>, the response
+    time may be horrible and it may slow down the browser enough to
+    get a pop-up warning.
+  </p>
+</div> -->
+
+
+</body>
+</html>
