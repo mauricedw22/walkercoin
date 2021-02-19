@@ -1,12 +1,11 @@
 const crypto = require("crypto");
 var mongojs = require('mongojs');
-// const MongoClient = require('mongodb').MongoClient;
 
 module.exports = function(app, passport){
     
   // uri = process.env.MONGODB_URI || 'mongodb://localhost/walkercoin';
 
-  uri = 'mongodb+srv://mauricedw22:dataMan@cluster1.slfse.mongodb.net/walkercoin?retryWrites=true&w=majority';
+  uri = 'your-mongodb-connection-string';
 
   var ObjectId = require('mongojs').ObjectID;
   
@@ -16,7 +15,7 @@ module.exports = function(app, passport){
   const server = new StellarSdk.Server('https://horizon.stellar.org')
   StellarSdk.Network.usePublicNetwork()
 
-  const source = StellarSdk.Keypair.fromSecret('SCNTXTGZWA2OUR546BRUTX7HOT6NGCVSMSDF6V5ET6AMN6NSFWVP6RAN') //GD7KW42SLGQQY2V6YTLKTFIN5Q4VEXUBX3M3ASTOOZQFIUFVCNKPFNBR
+  const source = StellarSdk.Keypair.fromSecret('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
   const destination = StellarSdk.Keypair.random()
 
   app.get('/', function(req, res){
@@ -142,33 +141,8 @@ module.exports = function(app, passport){
         }
       });
     
-        /* var id = req.user._id.toString();
-        var query = {"_id": ObjectId(id)}; 
-
-        
-           db1.users.findOne(query, function(err, docs){
     
-             if(err) { }
-    
-             if(docs){
-    
-                const request = require('request');
-                request('https://horizon.stellar.org/accounts/' + docs.local.key0, function (error, response, body) {
-                  var data = JSON.parse(body);
-                  if (!error && response.statusCode == 200) {
-                    //console.log('WALK Balance: ' + data.balances[0].balance + '\nXLM Balance: ' + data.balances[1].balance); 
-                    res.send(data.balances[1].balance) 
-                  }
-                });
-    
-              } else {
-    
-    
-              }   
-             
-           }); */
-    
-        });
+    });
 
 
     //Deposit WALK route
@@ -197,7 +171,7 @@ module.exports = function(app, passport){
       var amount = req.body.amount;
 
       var issuingKeys = StellarSdk.Keypair
-      .fromSecret('SAFFVNB4ODISK3ZS7CYQWZWPJGPDDBE5SJOTSLPCFXFSSWPDP63DCSEJ');
+      .fromSecret('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX');
 
       // Create an object to represent the new asset
       var walkerCoin = new StellarSdk.Asset('WALK', issuingKeys.publicKey());
@@ -238,10 +212,10 @@ module.exports = function(app, passport){
     
                 // Keys for accounts to issue and receive the new asset
               var issuingKeys = StellarSdk.Keypair
-              .fromSecret('SAFFVNB4ODISK3ZS7CYQWZWPJGPDDBE5SJOTSLPCFXFSSWPDP63DCSEJ');
-              //.fromSecret('SB37PS2ZKL7EFQ4PVLYRBZYNY2RK3BLEMUZDHJRLXELP7P72VARK2NRI');
+              .fromSecret('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX');
+       
               var receivingKeys = StellarSdk.Keypair
-              .fromSecret(secret); //.fromSecret('SAQSDDV4EEENEYWBLTZBLPILPDU4CE2SPSEDFJUK3SZ33L6TPAO4EANT');
+              .fromSecret(secret);
     
               // Create an object to represent the new asset
               var walkerCoin = new StellarSdk.Asset('WALK', issuingKeys.publicKey());
@@ -375,10 +349,10 @@ module.exports = function(app, passport){
 
       // Keys for accounts to issue and receive the new asset
       var issuingKeys = StellarSdk.Keypair
-      .fromSecret('SAFFVNB4ODISK3ZS7CYQWZWPJGPDDBE5SJOTSLPCFXFSSWPDP63DCSEJ');
+      .fromSecret('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX');
       //.fromSecret('SB37PS2ZKL7EFQ4PVLYRBZYNY2RK3BLEMUZDHJRLXELP7P72VARK2NRI');
       var receivingKeys = StellarSdk.Keypair
-      .fromSecret('SDNDXEMWHRXJ4Y77AWHTUBP6DMNYNVVLPDXLQS5IWGWEDRZ54DBSEKLC'); //.fromSecret(secret);
+      .fromSecret('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'); //.fromSecret(secret);
        
 
       // Create an object to represent the new asset
@@ -442,9 +416,5 @@ module.exports = function(app, passport){
     checkBalance(pub);
 
   });
-
-  
-
-
 
  };
