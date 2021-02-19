@@ -3,7 +3,7 @@
 <h1>Test token wallet app by Maurice W2</h1>
 <strong>Walkercoin (ticker:WALK) is a token used to quantify bragging rights and award users (currently just people within the Walker family) with something for winning family card games, 
 Monopoly board game challenges, family dance-offs and much more! </strong><br><br>
-<strong> Try the [Walkercoin wallet app](https://walkercoin.herokuapp.com) live!</strong>
+  <strong> Try the <a href="https://walkercoin.herokuapp.com" target="_blank">Walkercoin wallet app</a> live!</strong>
 </div><br>
 
 This token and wallet app were built purely for entertainment purposes and should not be considered legal tender of any kind.  
